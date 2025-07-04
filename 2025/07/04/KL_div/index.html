@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | Ruthless&#39;s Blog</title>
+    <title>KL散度 | Ruthless&#39;s Blog</title>
     <meta name="author" content="Ruthless" />
     <meta name="description" content="关于Ruthless的一些分享" />
     <meta name="keywords" content="" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,99 +154,75 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>KL散度</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/7/4
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%A7%91%E7%A0%94/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                科研
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
             
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
-        
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/hello-world/">
-                    <h3>Hello World</h3>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%A6%82%E7%8E%87/" style="color: #ff7d73">
+                    概率
                 </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/VAM/">
-                    <h3></h3>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #ffa2c4">
+                    机器学习
                 </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/CMR1/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="kl散度">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/KL_div/">
-                    <h3>KL散度</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E7%A7%91%E7%A0%94/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            科研
-                        </a>
-                    </span>
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%A6%82%E7%8E%87/" style="color: #ffa2c4">
-                                概率
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #00a596">
-                                机器学习
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
+            </span>
+            
+        </span>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h1 id="KL散度的定义与公式"><a href="#KL散度的定义与公式" class="headerlink" title="KL散度的定义与公式"></a>KL散度的定义与公式</h1><h2 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h2><p>KL散度（Kullback - Leibler Divergence），也被称为相对熵，是一种衡量两个概率分布差异的方法。它用于量化两个概率分布之间的距离，可以用来评估一个概率分布与另一个概率分布的相似程度。KL散度是非负的，当两个概率分布完全相同时，其值为0，否则为正数。</p>
+<h2 id="二、公式"><a href="#二、公式" class="headerlink" title="二、公式"></a>二、公式</h2><p>对于离散概率分布，KL散度的公式为：<br>[<br>D_{KL}(P | Q) &#x3D; \sum_{x \in \mathcal{X}} P(x) \log \frac{P(x)}{Q(x)}<br>]<br>其中：</p>
+<ul>
+<li>(P) 和 (Q) 是定义在相同样本空间 (\mathcal{X}) 上的两个概率分布。</li>
+<li>(P(x)) 和 (Q(x)) 分别是概率分布 (P) 和 (Q) 在样本 (x) 处的概率值。</li>
+<li>(\log) 是自然对数。</li>
+</ul>
+<p>对于连续概率分布，KL散度的公式为：<br>[<br>D_{KL}(P | Q) &#x3D; \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)} dx &#x3D; \int_{-\infty}^{\infty} p(x) \log p(x) - \log q(x) dx &#x3D; E_{x-p}[\log p(x) - \log q(x)]<br>]<br>其中：</p>
+<ul>
+<li>(p(x)) 和 (q(x)) 分别是概率分布 (P) 和 (Q) 的概率密度函数。</li>
+<li>积分范围是整个样本空间。</li>
+</ul>
+<p>KL散度的值越大，表示两个概率分布之间的差异越大；值越小，表示两个概率分布越相似。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -273,6 +253,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | Ruthless&#39;s Blog</title>
+    <title> | Ruthless&#39;s Blog</title>
     <meta name="author" content="Ruthless" />
     <meta name="description" content="关于Ruthless的一些分享" />
     <meta name="keywords" content="" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,99 +154,39 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+            <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/7/4
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/VAM/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/CMR1/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="kl散度">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/7/4</div>
-                <a href="/2025/07/04/KL_div/">
-                    <h3>KL散度</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E7%A7%91%E7%A0%94/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            科研
-                        </a>
-                    </span>
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%A6%82%E7%8E%87/" style="color: #ffa2c4">
-                                概率
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #00a596">
-                                机器学习
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h1 id="Approximate-Distribution-ELBO"><a href="#Approximate-Distribution-ELBO" class="headerlink" title="Approximate Distribution: ELBO"></a>Approximate Distribution: ELBO</h1><p>( q_{\theta}(z) \approx p(z|x) )</p>
+<p>( D(q_{\theta}(z) | p(z|x)) &#x3D; \mathbb{E}<em>{z \sim q} [\log \frac{q</em>{\theta}(z)}{p(z|x)}] &#x3D; \mathbb{E}<em>{z \sim q} [\log q</em>{\theta}(z) - \log p(z|x)] )</p>
+<p>( &#x3D; \mathbb{E}<em>{z \sim q} [\log q</em>{\theta}(z) - \log \frac{p(z, x)}{p(x)}] )</p>
+<p>( &#x3D; \mathbb{E}<em>{z \sim q} [\log q</em>{\theta}(z) - \log p(z, x)] + \log p(x) )</p>
+<p><strong>evidence lower bound (elbo)</strong></p>
+<p>( \log p(x) &#x3D; \mathbb{E}<em>{z \sim q} [\log p(z, x) - \log q</em>{\theta}(z)] + D(q_{\theta}(z) | p(z|x)) )</p>
+<p>( \log p(x) \geq \mathbb{E}<em>{z \sim q} [\log p(z, x) - \log q</em>{\theta}(z)] \equiv \mathcal{L}_q )</p>
+<p><strong>objective: minimizing kl divergence → maximizing elbo</strong> (variational optimization: optimizing over functions)</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -273,6 +217,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
